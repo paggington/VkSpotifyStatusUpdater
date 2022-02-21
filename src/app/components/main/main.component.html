@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-dark">
+  <form class="form-inline ms-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="borders-input input-group-text" id="basic-addon1">@</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+             aria-describedby="basic-addon1">
+    </div>
+  </form>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6" [ngClass]="{'disabled':isUserAuthenticatedToVk}">
+      <div class="container float-start bg-light mt-3" *ngIf="!isUserAuthenticatedToVk">
+        <div class="jumbotron">
+          <h1 class="display-4">Authorize to Vk.com</h1>
+          <p class="lead">This is a simple operation of authorization all your data stored on your device.</p>
+          <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button" (click)="loginVkEvent()">Vk.com Auth</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="container float-end bg-light mt-3" *ngIf="!isUserAuthenticatedToVk">
+        <div class="jumbotron">
+          <h1 class="display-4">Authorize to Spotify</h1>
+          <p class="lead">This is a simple operation of authorization all your data stored on your device.</p>
+          <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-success btn-lg" href="#" role="button">Spotify Auth</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container text-center mt-2">
+  <img src="assets/images/cat.jpg" alt="" size="10" class="rounded-image-photo rounded rounded-circle" border="5" >
+  <h3>Ортём Фанфурик</h3>
+  <div class="d-inline-block">
+    <fa-icon [icon]="faPlay" class="playing-label"></fa-icon>
+    <p>I'm the Freddie man.</p>
+  </div>
+
+</div>
+<p>https://oauth.vk.com/authorize?client_id=8084983&redirect_uri=http://localhost:4200/&scope=12&display=page&response_type=%22token%22</p>
